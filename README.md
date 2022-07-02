@@ -17,7 +17,7 @@ If you are using [4chan X](https://github.com/ccd0/4chan-x) you can add a button
 Under `4chan X Settings -> Sauce` add the following after the `# Known filename formats` section
 ```text
 # btp-server button
-javascript:void(document.getElementById('imageurlfield').value = %URL)%semivoid(document.getElementById('filenamefield').value = (%name.replace(/\.[^/.]+$/, "")));text:yejitag
+javascript:void(document.getElementById('imageurlfield').value = %URL)%semivoid(document.getElementById('filenamefield').value = (%name.replace(/\.[^/.]+$/, "")));text:btp-server
 ```
 
 ## Usage
