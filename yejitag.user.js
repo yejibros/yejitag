@@ -23,28 +23,37 @@
 
 ///////
 
-function getReplyBg() {
-    let replyDiv = document.createElement('div');
-    replyDiv.className = 'reply';
-    replyDiv.style.display = 'none';
-    document.body.appendChild(replyDiv);
-    let replyBgColor = getComputedStyle(replyDiv).getPropertyValue('background-color');
-    replyDiv.parentNode.removeChild(replyDiv);
-    return replyBgColor
-}
-
 let posX = GM_getValue('left','50px');
 let posY = GM_getValue('top','50px');
 let savedTags = GM_getValue('savedTags',[]);
 let savedTagsIndex = 0;
 
-let default_textarea = getComputedStyle(document.querySelector('textarea'));
+let bgColor, textareaColor, borderColor, textColor;
+
+function setColors() {
+    let replyDiv = document.createElement('div');
+    replyDiv.className = 'reply';
+    replyDiv.style.display = 'none';
+    document.body.appendChild(replyDiv);
+
+    let textarea = document.createElement('input');
+    textarea.type = 'text';
+    replyDiv.appendChild(textarea);
+
+    let replyBgColor = getComputedStyle(replyDiv).getPropertyValue('background-color');
+    let textarea_style = getComputedStyle(textarea);
+
+    bgColor = GM_getValue('bgColor',replyBgColor);
+    textareaColor = GM_getValue('textareaColor',textarea_style.backgroundColor);
+    borderColor = GM_getValue('borderColor',textarea_style.backgroundColor);
+    textColor = GM_getValue('textColor',textarea_style.color);
+
+    replyDiv.parentNode.removeChild(replyDiv);
+}
+
+setColors();
 
 let filenameNamespace = GM_getValue('filenameNamespace',false); // "filenameNamespace": "filename"
-let bgColor = GM_getValue('bgColor',getReplyBg());
-let textareaColor = GM_getValue('textareaColor',default_textarea.backgroundColor);
-let borderColor = GM_getValue('borderColor',default_textarea.backgroundColor);
-let textColor = GM_getValue('textColor',default_textarea.color);
 
 if (filenameNamespace === false) {
     filenameNamespace = 'filename';
