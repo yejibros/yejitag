@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Yejitag
 // @namespace    https://github.com/yejibros
-// @version      1.0.1
+// @version      1.0.2
 // @description  Easily download images from 4chan(nel) with tags for import into Hydrus Network
 // @author       yejibros
-// @downloadURL  https://github.com/yejibros/yejitag/raw/master/yejitag.user.js
-// @updateURL    https://github.com/yejibros/yejitag/raw/master/yejitag.user.js
+// @downloadURL  https://raw.githubusercontent.com/yejibros/yejitag/master/yejitag.user.js
+// @updateURL    https://raw.githubusercontent.com/yejibros/yejitag/master/yejitag.user.js
 
 // @match        *://boards.4chan.org/*
 // @match        *://boards.4channel.org/*
