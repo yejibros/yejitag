@@ -7,8 +7,8 @@
 // @downloadURL  https://github.com/yejibros/yejitag/raw/master/yejitag.user.js
 // @updateURL    https://github.com/yejibros/yejitag/raw/master/yejitag.user.js
 
-// @match        *://boards.4chan.org/*/thread/*
-// @match        *://boards.4channel.org/*/thread/*
+// @match        *://boards.4chan.org/*
+// @match        *://boards.4channel.org/*
 
 // @connect      localhost
 
@@ -155,6 +155,7 @@ const control = document.createElement("div");
 control.id = "yejitag";
 control.classList.add('dialog');
 control.style = div_style + drag_style + div_pos;
+if (document.querySelector(".catalog-mode")) {control.style.display = "none";}
 document.body.appendChild(control);
 
 const yejiMove = document.createElement("div");
